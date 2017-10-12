@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tutorial 4 - Animation</title>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+  <a-asssets>
+    <img src="img/texture.jpg" alt="" id="texture">
+  </a-asssets>
+  <a-box
+          width="1"
+          height="1"
+          depth="1"
+          position="0 4 -2.5"
+          rotation="45 45 45"
+          src="#texture">
+    <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+  </a-box>
+</a-scene>
+</body>
+</html>
