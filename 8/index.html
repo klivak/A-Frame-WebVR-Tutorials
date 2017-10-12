@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tutorial 8 - Skybox</title>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+  <a-asssets>
+    <img src="img/texture.jpg" alt="" id="texture">
+  </a-asssets>
+  <a-box
+          width="1"
+          height="1"
+          depth="1"
+          position="0 4 -2.5"
+          rotation="45 45 45"
+          src="#texture">
+    <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+
+    <a-event name="mouseenter" scale="4 1 6"></a-event>
+  </a-box>
+
+  <a-camera
+          position="0 7 5">
+    <a-cursor color="#ff0000"/>
+  </a-camera>
+
+  <a-light type="spot" color="#ff0000" position="-10 0 0" look-at="a-box"></a-light>
+  <a-light type="point" color="#00ff00" position="0 5 0"></a-light>
+
+  <a-sky src="img/skybox.jpg"></a-sky> <!-- spherical skyboxes -->
+
+</a-scene>
+
+</body>
+</html>
